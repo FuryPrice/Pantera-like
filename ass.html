@@ -1,0 +1,262 @@
+<!doctype html>
+<html lang="ru">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Pantera-like — Demo</title>
+  <meta name="description" content="Инвестиционная фирма — демо сайт в стиле Pantera" />
+  <link rel="stylesheet" href="ass.css">
+</head>
+<body>
+  <div class="container">
+    <!-- NAV -->
+    <header>
+      <div class="nav" role="navigation" aria-label="Главная навигация">
+        <div class="brand row" tabindex="0">
+          <div class="logo">P</div>
+          <div>
+            <div class="name">Pantera-like</div>
+            <div class="small muted">Инвестиции в цифровые активы</div>
+          </div>
+        </div>
+
+        <nav>
+          <ul>
+            <li><a href="#about">О нас</a></li>
+            <li><a href="#strategies">Стратегии</a></li>
+            <li><a href="#insights">Инсайты</a></li>
+            <li><a href="#team">Команда</a></li>
+          </ul>
+        </nav>
+
+        <div class="nav-actions">
+          <button class="ghost" onclick="openModal('contact')">Связаться</button>
+          <button class="btn" onclick="openModal('subscribe')">Подписаться</button>
+          <button class="hamb" id="hambBtn" aria-label="Меню">☰</button>
+        </div>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main>
+      <section class="hero" aria-labelledby="hero-title">
+        <div>
+          <div class="kicker">Инвестиции • Исследования • Портфель</div>
+          <h1 id="hero-title">Инвестиционная платформа, фокусированная на цифровых активах</h1>
+          <p class="lead">Мы инвестируем в блокчейн-проекты, протоколы и команды, формируем долгосрочные портфели и публикуем аналитические отчёты.</p>
+          <div class="row">
+            <button class="btn" onclick="openModal('subscribe')">Узнать больше</button>
+            <button class="ghost" onclick="scrollToSection('strategies')">Наши стратегии</button>
+          </div>
+
+          <div class="stats" aria-hidden="true">
+            <div class="stat">
+              <div class="small muted">AUM</div>
+              <div style="font-weight:800;font-size:18px">₸ 12.4B</div>
+            </div>
+            <div class="stat">
+              <div class="small muted">Инвестиций</div>
+              <div style="font-weight:800;font-size:18px">124</div>
+            </div>
+            <div class="stat">
+              <div class="small muted">ROI (5y)</div>
+              <div style="font-weight:800;font-size:18px">+82%</div>
+            </div>
+          </div>
+        </div>
+
+        <aside class="hero-side card" aria-hidden="false">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <div>
+              <div class="small muted">Последнее обновление портфеля</div>
+              <div style="font-weight:800">Сентябрь 2025</div>
+            </div>
+            <div class="chip">Риск: Средний</div>
+          </div>
+
+          <div style="margin-top:12px">
+            <div class="metric">
+              <div class="small muted">Крипто</div>
+              <div style="font-weight:800">45%</div>
+            </div>
+            <div class="metric">
+              <div class="small muted">Инфраструктура</div>
+              <div style="font-weight:800">30%</div>
+            </div>
+            <div class="metric">
+              <div class="small muted">DeFi</div>
+              <div style="font-weight:800">25%</div>
+            </div>
+          </div>
+
+          <div style="margin-top:18px;display:flex;gap:8px">
+            <button class="btn" onclick="alert('Запрос инвестиций')">Запрос инвестиций</button>
+            <button class="ghost" onclick="openModal('contact')">Контакты</button>
+          </div>
+        </aside>
+      </section>
+
+      <!-- ABOUT -->
+      <section id="about">
+        <div class="card">
+          <div style="display:flex;justify-content:space-between;align-items:center">
+            <h2 style="margin:0">О нас</h2>
+            <div class="small muted">Основано 2013</div>
+          </div>
+          <p class="small muted" style="margin-top:10px">Мы — команда инвесторов и исследователей, сосредоточенных на ранних и ростовых возможностях в криптоэкономике. Публикуем открытые исследования и помогаем проектам масштабироваться.</p>
+        </div>
+      </section>
+
+      <!-- STRATEGIES -->
+      <section id="strategies">
+        <h2 style="margin-top:18px">Стратегии</h2>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="strategy">
+            <h3>Early-stage VC</h3>
+            <p class="small muted">Инвестиции в ранние команды, ориентированные на масштабируемые протоколы.</p>
+            <div style="margin-top:12px" class="small muted">Средний чек: ₸30M</div>
+          </div>
+          <div class="strategy">
+            <h3>Growth & Infrastructure</h3>
+            <p class="small muted">Поддержка протоколов уровня инфраструктуры и крупных приложений.</p>
+            <div style="margin-top:12px" class="small muted">Средний чек: ₸120M</div>
+          </div>
+          <div class="strategy">
+            <h3>Liquidity & Trading</h3>
+            <p class="small muted">Активное управление ликвидностью и макро-хеджирование рисков.</p>
+            <div style="margin-top:12px" class="small muted">Стратегия с коротким горизонтом</div>
+          </div>
+        </div>
+      </section>
+
+      <!-- INSIGHTS / NEWS -->
+      <section id="insights">
+        <h2 style="margin-top:18px">Инсайты</h2>
+        <div class="grid-2" style="margin-top:12px">
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <div>
+                <div style="font-weight:700">Последний отчет: Рынок L1</div>
+                <div class="small muted">Автор: Research Team — 12 авг 2025</div>
+              </div>
+              <div class="small muted">Читать →</div>
+            </div>
+            <p class="small muted">Краткое резюме: анализ конкуренции между L1, влияние стейкинга и экономических моделей. PDF и данные доступны по запросу.</p>
+          </div>
+
+          <div class="card">
+            <div style="display:flex;justify-content:space-between;align-items:center;margin-bottom:8px">
+              <div>
+                <div style="font-weight:700">Интервью с основателем проекта X</div>
+                <div class="small muted">3 сент 2025</div>
+              </div>
+              <div class="small muted">Смотреть →</div>
+            </div>
+            <p class="small muted">Обсуждаем токеномику, дорожную карту и стратегию масштабирования.</p>
+          </div>
+        </div>
+
+        <div style="margin-top:14px;display:flex;flex-direction:column;gap:10px">
+          <div class="news-item">
+            <div style="width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,var(--accent-2),#00d4ff);flex-shrink:0"></div>
+            <div>
+              <div style="font-weight:700">Анонс: новый пул ликвидности</div>
+              <div class="small muted">12 сен 2025 • Подробнее о стратегии и рисках</div>
+            </div>
+          </div>
+
+          <div class="news-item">
+            <div style="width:54px;height:54px;border-radius:8px;background:linear-gradient(135deg,var(--accent),#ff9e6b);flex-shrink:0"></div>
+            <div>
+              <div style="font-weight:700">Отчет: квартальный обзор рынка</div>
+              <div class="small muted">1 окт 2025 • Ключевые метрики и прогнозы</div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- subscribe -->
+      <section style="margin-top:18px">
+        <div class="subscribe card">
+          <div style="flex:1">
+            <div style="font-weight:700">Подпишитесь на ежемесячные инсайты</div>
+            <div class="small muted" style="margin-top:6px">Отчёты, анализ и приглашения на приватные вебинары.</div>
+          </div>
+          <div style="display:flex;gap:8px;align-items:center">
+            <input id="emailInput" type="email" placeholder="Ваш email" aria-label="Email для подписки" />
+            <button class="btn" onclick="subscribe()">Подписаться</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- team -->
+      <section id="team">
+        <h2 style="margin-top:18px">Команда</h2>
+        <div class="grid-3" style="margin-top:12px">
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent),#ffb3b3)"></div>
+              <div>
+                <div style="font-weight:700">Алексей Иванов</div>
+                <div class="small muted">Partner • Инвестиции</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,var(--accent-2),#a5c8ff)"></div>
+              <div>
+                <div style="font-weight:700">Мария Петрова</div>
+                <div class="small muted">Head of Research</div>
+              </div>
+            </div>
+          </div>
+          <div class="card">
+            <div style="display:flex;gap:12px;align-items:center">
+              <div style="width:56px;height:56px;border-radius:10px;background:linear-gradient(135deg,#7ee5c7,#4dd0e1)"></div>
+              <div>
+                <div style="font-weight:700">Сергей Ким</div>
+                <div class="small muted">Operations</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>
+        <div style="font-weight:700">Pantera-like</div>
+        <div class="small muted" style="margin-top:6px">© 2025 Demo. Все права защищены.</div>
+      </div>
+      <div style="display:flex;gap:12px;align-items:center">
+        <a class="small muted" href="#insights">Блог</a>
+        <a class="small muted" href="#contact">Контакты</a>
+        <a class="small muted" href="#privacy">Политика</a>
+      </div>
+    </footer>
+  </div>
+
+  <!-- MODAL (simple) -->
+  <div id="modal" style="position:fixed;inset:0;display:none;align-items:center;justify-content:center;background:rgba(2,6,23,0.6);z-index:80;padding:24px">
+    <div style="max-width:640px;width:100%;background:var(--card);padding:18px;border-radius:12px">
+      <div style="display:flex;justify-content:space-between;align-items:center">
+        <div style="font-weight:800">Оставить запрос</div>
+        <button onclick="closeModal()" class="ghost">Закрыть</button>
+      </div>
+      <div style="margin-top:12px;display:flex;flex-direction:column;gap:8px">
+        <input id="nameField" placeholder="Имя" />
+        <input id="emailField" placeholder="Email" />
+        <textarea id="msgField" placeholder="Сообщение" rows="4" style="resize:none;padding:10px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.06);color:inherit"></textarea>
+        <div style="display:flex;gap:8px;justify-content:flex-end">
+          <button class="ghost" onclick="closeModal()">Отмена</button>
+          <button class="btn" onclick="sendRequest()">Отправить</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <script src="ass.js"></script>
+
+</body>
+</html>
